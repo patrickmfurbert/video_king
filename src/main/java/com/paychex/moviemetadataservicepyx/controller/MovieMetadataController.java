@@ -31,10 +31,17 @@ public class MovieMetadataController {
         return movieMetadata;
     }
 
-    @GetMapping(value = "/moviemetadata", params ="cast")
+    @GetMapping(value = "/moviemetadata", params = "decade")
     @ResponseBody
-    public List<MovieMetadata> getMoviesByYear(@RequestParam String cast){
-        List<MovieMetadata> movieMetadata = movieMetadataService.getByCast(cast);
+    public List<MovieMetadata> getMoviesByDecade(@RequestParam int decade){
+        List<MovieMetadata> movieMetadata = movieMetadataService.getByDecade(decade);
+        return movieMetadata;
+    }
+
+    @GetMapping(value = "/moviemetadata", params ="cast_member")
+    @ResponseBody
+    public List<MovieMetadata> getMoviesByYear(@RequestParam String cast_member){
+        List<MovieMetadata> movieMetadata = movieMetadataService.getByCast(cast_member);
         return movieMetadata;
     }
 

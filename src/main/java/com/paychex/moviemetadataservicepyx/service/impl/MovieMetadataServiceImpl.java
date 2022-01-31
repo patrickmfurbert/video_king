@@ -5,6 +5,8 @@ import java.util.List;
 import com.paychex.moviemetadataservicepyx.dao.MovieMetadataRepository;
 import com.paychex.moviemetadataservicepyx.data.MovieMetadata;
 import com.paychex.moviemetadataservicepyx.service.MovieMetadataService;
+import com.paychex.moviemetadataservicepyx.utils.ConvertToDecade;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,8 +46,12 @@ public class MovieMetadataServiceImpl implements MovieMetadataService{
 
     @Override
     public List<MovieMetadata> getByDecade(int year) {
-        // TODO Auto-generated method stub
-        return null;
+        // ConvertToDecade
+        int decade = ConvertToDecade.LastDigitToZero(year);
+
+        List<MovieMetadata> movies = movieMetadataRepository.findMovieMetadataByDecade(decade, decade+9);
+
+        return movies;
     }
 
     @Override
@@ -55,7 +61,7 @@ public class MovieMetadataServiceImpl implements MovieMetadataService{
         if(movies == null){
             throw new RuntimeException("Invalid cast: " + cast);
         }
-        
+
         return movies;
     }
     
