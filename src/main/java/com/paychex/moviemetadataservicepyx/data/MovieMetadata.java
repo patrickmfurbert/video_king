@@ -1,7 +1,9 @@
 package com.paychex.moviemetadataservicepyx.data;
 
 import java.util.List;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document("movies")
 public class MovieMetadata {
     
     private String title;
