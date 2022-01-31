@@ -1,8 +1,8 @@
-1. Create Data
-2. Properly annotate data to go into Repository
-3. Setup Business Layer
-4. Setup Control Layer (Annotate)
-5. Unit Test
-6. Validation
-7. Put Requests
-
+1. Create Data .. done
+2. Properly annotate data to go into Repository .. done
+3. Setup Business Layer .. in progress
+4. Setup Controller Layer (Annotate) .. in progress 
+5. TitleCase with java streams
+6. Unit Test
+7. Validation
+8. Put Requests

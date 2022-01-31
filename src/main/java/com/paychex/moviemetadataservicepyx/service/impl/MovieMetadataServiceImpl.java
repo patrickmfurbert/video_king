@@ -1,5 +1,7 @@
 package com.paychex.moviemetadataservicepyx.service.impl;
 
+import java.util.List;
+
 import com.paychex.moviemetadataservicepyx.dao.MovieMetadataRepository;
 import com.paychex.moviemetadataservicepyx.data.MovieMetadata;
 import com.paychex.moviemetadataservicepyx.service.MovieMetadataService;
@@ -29,9 +31,15 @@ public class MovieMetadataServiceImpl implements MovieMetadataService{
     }
 
     @Override
-    public MovieMetadata getByYear(int year) {
-        // TODO Auto-generated method stub
-        return null;
+    public List<MovieMetadata> getByYear(int year) {
+        //Call to Datalayer
+        List<MovieMetadata> movies = movieMetadataRepository.findMovieMetadataByYear(year);
+
+        if(movies == null){
+            throw new RuntimeException("Invalid year: " + year);
+        }
+
+        return movies;
     }
 
     @Override
