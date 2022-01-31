@@ -51,6 +51,10 @@ public class MovieMetadataServiceImpl implements MovieMetadataService{
 
         List<MovieMetadata> movies = movieMetadataRepository.findMovieMetadataByDecade(decade, decade+9);
 
+        if(movies == null){
+            throw new RuntimeException("Invalid decade: " + year);
+        }
+
         return movies;
     }
 

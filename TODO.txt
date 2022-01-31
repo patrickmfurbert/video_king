@@ -6,3 +6,6 @@
 6. Unit Test
 7. Validation
 8. Put Requests
+
+//Assumption: 
+Title Case => The first letter of every word in a String/sentence is uppercase
