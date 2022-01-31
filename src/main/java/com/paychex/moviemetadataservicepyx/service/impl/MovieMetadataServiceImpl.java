@@ -50,8 +50,13 @@ public class MovieMetadataServiceImpl implements MovieMetadataService{
 
     @Override
     public List<MovieMetadata> getByCast(String cast) {
-        // TODO Auto-generated method stub
-        return null;
+        List<MovieMetadata> movies = movieMetadataRepository.findMovieMetadataByCast(cast);
+
+        if(movies == null){
+            throw new RuntimeException("Invalid cast: " + cast);
+        }
+        
+        return movies;
     }
     
 }

@@ -31,4 +31,11 @@ public class MovieMetadataController {
         return movieMetadata;
     }
 
+    @GetMapping(value = "/moviemetadata", params ="cast")
+    @ResponseBody
+    public List<MovieMetadata> getMoviesByYear(@RequestParam String cast){
+        List<MovieMetadata> movieMetadata = movieMetadataService.getByCast(cast);
+        return movieMetadata;
+    }
+
 }
