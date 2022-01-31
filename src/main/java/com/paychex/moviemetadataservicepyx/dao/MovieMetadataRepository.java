@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MovieMetadataRepository extends MongoRepository<MovieMetadata, String> {
-    MovieMetadata findMovieMetadataByTitle(String title);
+    List<MovieMetadata> findMovieMetadataByTitle(String title);
     List<MovieMetadata> findMovieMetadataByYear(int year);
 }

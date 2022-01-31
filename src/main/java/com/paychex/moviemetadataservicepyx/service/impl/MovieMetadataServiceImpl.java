@@ -19,9 +19,9 @@ public class MovieMetadataServiceImpl implements MovieMetadataService{
     private MovieMetadataRepository movieMetadataRepository;
 
     @Override
-    public MovieMetadata getByMovieTitle(String title) {
+    public List<MovieMetadata> getByMovieTitle(String title) {
         // Call to Datalayer
-        MovieMetadata movies = movieMetadataRepository.findMovieMetadataByTitle(title);
+        List<MovieMetadata> movies = movieMetadataRepository.findMovieMetadataByTitle(title);
 
         if(movies == null){
             throw new RuntimeException("Invalid movie: " + title);
@@ -43,13 +43,13 @@ public class MovieMetadataServiceImpl implements MovieMetadataService{
     }
 
     @Override
-    public MovieMetadata getByDecade(int year) {
+    public List<MovieMetadata> getByDecade(int year) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public MovieMetadata getByCast(String cast) {
+    public List<MovieMetadata> getByCast(String cast) {
         // TODO Auto-generated method stub
         return null;
     }

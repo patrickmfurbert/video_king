@@ -19,8 +19,8 @@ public class MovieMetadataController {
     
     @GetMapping(value = "/moviemetadata", params = "title")
     @ResponseBody
-    public MovieMetadata getMoviesByTitle(@RequestParam String title){
-        MovieMetadata movieMetadata = movieMetadataService.getByMovieTitle(title);
+    public List<MovieMetadata> getMoviesByTitle(@RequestParam String title){
+        List<MovieMetadata> movieMetadata = movieMetadataService.getByMovieTitle(title);
         return movieMetadata; 
     }
 
