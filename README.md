@@ -103,4 +103,4 @@ Given more time, I would...
 5. Put more into the server validation of incomming requests.
 
 ## HTTP Diagram
-![](../src/main/resources/http_diag.png)
+![](./src/main/resources/http_diag.png)
