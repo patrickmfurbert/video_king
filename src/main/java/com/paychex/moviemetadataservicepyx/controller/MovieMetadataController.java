@@ -22,7 +22,7 @@ public class MovieMetadataController {
     @Autowired
     private MovieMetadataService movieMetadataService;
     
-    @GetMapping(value = "/moviemetadata", params = "title")
+    @GetMapping(value = "/movies", params = "title")
     @ResponseBody
     public List<MovieMetadata> getMoviesByTitle(@RequestParam @NotBlank(message="Need to add a movie title") String title){
         List<MovieMetadata> movieMetadata = movieMetadataService.getByMovieTitle(title);

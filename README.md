@@ -1,32 +1,81 @@
-# movie-metadata-service
+# Chapter Select
 
-### Description
-A misguided venture to restore VideoKing Superstore to its former glory is launching soon. They need to build a web-service on the backend to support searching and retrieving data relating to the movies it has available in its catalogue.
+[Quickstart](#quickstart)
 
-### Requirements
-* Service responds to HTTP GET operations to retrieve movie metadata based on search parameters
-  * Returns a collection of movie metadata
-  * Supports getting movie metadata by
-    * Title
-    * Year
-    * \* Decade (Optional)
-    * \* Cast member (Optional)
-  * Use java streams processing to force movie titles to Title Case in the response
-  * Unit test the class performing this transformation
-  
+[Explanation](#explanation)
 
-  ` * Bonus points for supporting this feature`
+&emsp;[Step One](#step-one)
 
-### Constraints
-*	Using Spring Boot, Log4j2, Jackson, MongoDB, OpenFeign, Gradle, JDK 11 (specifically)
-*	Create unit tests using Junit 5
-*	Showcase clean coding skillset (SOLID principles, etc)
+&emsp;[Step Two](#step-three)
 
-### Additional Bonus Tasks
-* Create a sequence diagram of the flow from HTTP Request to HTTP Response
-* Add support for adding movies using an HTTP POST
+&emsp;[Step Three](#step-three)
 
-### Steps to Run
-1. Clone this repository, do not fork
-2. Modify application.yaml with the provided MongoDB credentials
-3. Execute `gradle bootRun`
+[Given More Time..](#given-more-time)
+
+# Quickstart
+
+## Requirements:
+
+- Oracle JDK11
+- Gradle >= 7.7.3
+
+## Steps
+
+1. In a terminal, in a directory of your choosing, clone this repo with `git clone repo_url`
+1. `cd` into the repo folder
+1. Update the /src/main/resources/application.yaml with the appropriate credentials
+```
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://username:password@pyx-interview-cluster0.2zo55.mongodb.net/interview?ssl=true&retryWrites=true&w=majority&authMechanism=SCRAM-SHA-1
+```
+1. run `gradle bootRun` or `./gradlew bootRun` to get all of the necessary packages and run the server
+    - backend server: http://localhost:8080/movies 
+    - ***get params*** are title, year, cast_member, decade
+    - ex: retrieve metadata with cast member 'Florance Lawrence' perform following get request `http://localhost:8080/movies?cast_member=Florence Lawrence`
+    - You can make a ***post*** request on the same endpoint http://localhost:8080/movies
+    - ex: post with the following schema 
+    ```json
+    {
+      "type": "MovieMetadata",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "year": {
+          "type": "integer"
+        },
+        "cast": {
+          "type": "array",
+          "items": "string"
+        },
+        "genres": {
+          "type": "array",
+          "items": "string"
+        },
+      }
+    }
+    ```
+1. run tests with `gradle bootRun` or `./gradlew bootRun`
+
+# Explanation
+
+lorem
+
+## Step One
+
+lorem
+
+## Step Two
+
+lorem
+
+## Step Three
+
+lorem
+
+## Given More Time
+Given more time, I would...
+
+- lorem
