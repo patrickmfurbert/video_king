@@ -44,10 +44,10 @@ public class ConvertToTitleCaseTest {
     @Test
     public void testToTitleCase(){
 
-        String empty = null;
-        assertNull(ConvertToTitleCase.toTitleCase(empty), "toTitleCase should return null on string of null");
+        String null_string = null;
+        assertNull(ConvertToTitleCase.toTitleCase(null_string), "toTitleCase should return null on string of null");
 
-        empty = "";
+        String empty = "";
         assertNull(ConvertToTitleCase.toTitleCase(empty), "toTitleCase should return null on string of size zero");
 
         String numbers = "12345";

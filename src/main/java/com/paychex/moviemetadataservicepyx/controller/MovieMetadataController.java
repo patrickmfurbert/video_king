@@ -16,8 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Validated
 public class MovieMetadataController {
 
-    // TODO setup validation on parameters
-
+    // Get Mapping
     @Autowired
     private MovieMetadataService movieMetadataService;
     
@@ -49,4 +48,6 @@ public class MovieMetadataController {
         return movieMetadata;
     }
 
+    // Post Mapping
+    
 }
