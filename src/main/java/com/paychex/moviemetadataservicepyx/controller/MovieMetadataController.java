@@ -8,6 +8,7 @@ import com.paychex.moviemetadataservicepyx.service.MovieMetadataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,21 +28,21 @@ public class MovieMetadataController {
         return movieMetadata; 
     }
 
-    @GetMapping(value = "/moviemetadata", params = "year")
+    @GetMapping(value = "/movies", params = "year")
     @ResponseBody
     public List<MovieMetadata> getMoviesByYear(@RequestParam @Min(value = 0, message="Must be greater than 0") int year){
         List<MovieMetadata> movieMetadata = movieMetadataService.getByYear(year);
         return movieMetadata;
     }
 
-    @GetMapping(value = "/moviemetadata", params = "decade")
+    @GetMapping(value = "/movies", params = "decade")
     @ResponseBody
     public List<MovieMetadata> getMoviesByDecade(@RequestParam @Min(value = 0, message="Must be greater than 0") int decade){
         List<MovieMetadata> movieMetadata = movieMetadataService.getByDecade(decade);
         return movieMetadata;
     }
 
-    @GetMapping(value = "/moviemetadata", params ="cast_member")
+    @GetMapping(value = "/movies", params ="cast_member")
     @ResponseBody
     public List<MovieMetadata> getMoviesByYear(@RequestParam @NotBlank(message="Need to add a cast member") String cast_member){
         List<MovieMetadata> movieMetadata = movieMetadataService.getByCast(cast_member);
@@ -49,5 +50,7 @@ public class MovieMetadataController {
     }
 
     // Post Mapping
+    @PostMapping(value = "/movies")
+    
     
 }

@@ -8,4 +8,5 @@ public interface MovieMetadataService {
     List<MovieMetadata> getByYear(int year);
     List<MovieMetadata> getByDecade(int year);
     List<MovieMetadata> getByCast(String cast);
+    List<MovieMetadata> create(MovieMetadata movie);
 }

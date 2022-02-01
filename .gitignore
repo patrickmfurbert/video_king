@@ -37,4 +37,5 @@ out/
 .vscode/
 
 ### Configuration ###
-/bin/main/resources/application.yaml
+/bin/main/application.yaml
+/src/main/resources/application.yaml

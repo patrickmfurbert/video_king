@@ -1,5 +1,6 @@
 package com.paychex.moviemetadataservicepyx.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import com.paychex.moviemetadataservicepyx.dao.MovieMetadataRepository;
 import com.paychex.moviemetadataservicepyx.data.MovieMetadata;
@@ -78,6 +79,24 @@ public class MovieMetadataServiceImpl implements MovieMetadataService{
         movies = ConvertToTitleCase.processMovies(movies);
 
         return movies;
+    }
+
+    @Override
+    public List<MovieMetadata> create(MovieMetadata movie) {
+        // Check if moviemetadata is already in the database
+        if(movie.getTitle() != null || movie.getTitle().length() != 0){
+            List<MovieMetadata> movies = movieMetadataRepository.findMovieMetadataByTitle(movie.getTitle());
+            if(!movies.isEmpty() && movies.get(0).getTitle().compareTo(movie.getTitle()) == 0 && movies.get(0).getYear() == movie.getYear()){
+                //duplicate entry found
+                throw new RuntimeException("Error Movie already in database: " + movie.getTitle());
+            }else{
+                movieMetadataRepository.insert(movie);
+                List<MovieMetadata> new_entry = new ArrayList<MovieMetadata>();
+                new_entry.add(movie);
+                return new_entry;
+            }
+        }
+        return null;
     }
     
 }
