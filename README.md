@@ -62,11 +62,11 @@ spring:
 
 # Explanation
 
-Springboot is a magical wonderland of seemingly unlimited configuration so figuring out where to start was a bit of a challenge. You need to know a bit about maven and gradle to understand the configuration files and dependencies. In addition to this, I wanted to make sure that MongoDB Compass was working with atlas to have a nice GUI to visualize the database and the movies collection. 
+Springboot is a magical wonderland of seemingly unlimited configuration options. Determining where to start was a bit of a challenge. You need to know a bit about maven and gradle to understand the configuration files and dependencies. In addition to this, I wanted to make sure that MongoDB Compass was working with atlas to have a nice GUI to visualize the database and the movies collection. 
 
 ## Step One
 
-After all of the configuration part was squared away I wanted to try to follow solid principles and use the N-tiered architexture for this assignment. This requires isolating the different layers of the the application. I wanted to keep the classes as light as possible and isolate as much of the different functionality throughout. 
+After all of the configuration part was squared away I wanted to try to follow solid principles and use the N-tiered architecture for this assignment. This requires isolating the different layers of the the application. I wanted to keep the classes as light as possible and isolate as much of the different functionality throughout. 
 
 I isolate the Controller Layer, The Service Layer, and the Data Layer from one another(folders: controller, service, dao respectively). One of the goals I had was to try and use some validation annotations on the get request mappings to provide more information when an request is made incorrectly. 
 
