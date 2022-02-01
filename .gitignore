@@ -38,4 +38,4 @@ out/
 
 ### Configuration ###
 /bin/main/application.yaml
-/src/main/resources/application.yaml
+# /src/main/resources/application.yaml

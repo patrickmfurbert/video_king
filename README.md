@@ -61,7 +61,7 @@ spring:
       }
     }
     ```
-1. run tests with `gradle bootRun` or `./gradlew bootRun`
+1. run tests with `gradle test` or `./gradlew test`
 
 # Explanation
 
