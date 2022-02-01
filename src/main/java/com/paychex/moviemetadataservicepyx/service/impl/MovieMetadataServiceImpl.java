@@ -28,6 +28,9 @@ public class MovieMetadataServiceImpl implements MovieMetadataService{
             throw new RuntimeException("Invalid movie: " + title);
         }
 
+        // Convert to TitleCase
+        movies = ConvertToTitleCase.processMovies(movies);
+
         return movies;
     }
 
@@ -39,6 +42,9 @@ public class MovieMetadataServiceImpl implements MovieMetadataService{
         if(movies == null){
             throw new RuntimeException("Invalid year: " + year);
         }
+
+        // Convert to TitleCase
+        movies = ConvertToTitleCase.processMovies(movies);
 
         return movies;
     }
@@ -67,6 +73,9 @@ public class MovieMetadataServiceImpl implements MovieMetadataService{
         if(movies == null){
             throw new RuntimeException("Invalid cast: " + cast);
         }
+
+        // Convert to TitleCase
+        movies = ConvertToTitleCase.processMovies(movies);
 
         return movies;
     }

@@ -8,10 +8,14 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MovieMetadataRepository extends MongoRepository<MovieMetadata, String> {
+
     List<MovieMetadata> findMovieMetadataByTitle(String title);
+
     List<MovieMetadata> findMovieMetadataByYear(int year);
+
     @Query(value = "{'cast': {$all:['?0']}}")
     List<MovieMetadata> findMovieMetadataByCast(String cast);
+    
     @Query(value = "{year: {$gte: ?0, $lt: ?1}}")
     List<MovieMetadata> findMovieMetadataByDecade(int start, int end);
 }

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-
 import com.paychex.moviemetadataservicepyx.data.MovieMetadata;
 
 /*
@@ -17,8 +16,7 @@ import com.paychex.moviemetadataservicepyx.data.MovieMetadata;
 */
 public class ConvertToTitleCase {
 
-
-    /*******Stream Processing Below********/
+    /*******Stream Processing********/
     public static List<MovieMetadata> processMovies(List<MovieMetadata> movies){
         return movies
         .stream() 
@@ -26,13 +24,13 @@ public class ConvertToTitleCase {
         .collect(Collectors.toList());
     }
 
-    public static MovieMetadata processMovie(MovieMetadata movie){
+    private static MovieMetadata processMovie(MovieMetadata movie){
         String title = movie.getTitle();
         movie.setTitle(toTitleCase(title));
         return movie;
     }
     
-    public static String toTitleCase(String title){
+    private static String toTitleCase(String title){
 
         // Check the length of the string
         if(title.length() == 0 || title == null){
