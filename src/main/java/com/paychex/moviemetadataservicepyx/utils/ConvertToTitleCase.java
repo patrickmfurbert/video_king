@@ -2,6 +2,10 @@ package com.paychex.moviemetadataservicepyx.utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import com.paychex.moviemetadataservicepyx.data.MovieMetadata;
 
 /*
 *For time consideration and simplicity 
@@ -9,9 +13,24 @@ import java.util.Arrays;
 *(order of priority… those first on the list are higher priority): 
 *Capitalize First and Last words
 *Capitalize words four letters or longer
-*Lower case “a”, “an”, “the”, “and”, “but”, “for”, “at”, “by”, to”
+*Lower case “a”, “an”, “the”, “and”, “but”, “for”, “at”, “by”, to”, "is", "it", "of"
 */
 public class ConvertToTitleCase {
+
+
+    /*******Stream Processing Below********/
+    public static List<MovieMetadata> processMovies(List<MovieMetadata> movies){
+        return movies
+        .stream() 
+        .map((movie) -> ConvertToTitleCase.processMovie(movie))
+        .collect(Collectors.toList());
+    }
+
+    public static MovieMetadata processMovie(MovieMetadata movie){
+        String title = movie.getTitle();
+        movie.setTitle(toTitleCase(title));
+        return movie;
+    }
     
     public static String toTitleCase(String title){
 
@@ -21,7 +40,7 @@ public class ConvertToTitleCase {
         }
 
         //create lower case words ArrayList<string>
-        ArrayList<String> lower_case_words = new ArrayList<>(Arrays.asList("a", "an", "the", "and", "but", "for", "at", "by", "to"));
+        ArrayList<String> lower_case_words = new ArrayList<>(Arrays.asList("a", "an", "the", "and", "but", "for", "at", "by", "to", "in", "is", "it", "of"));
 
          // create String Builder
         StringBuilder sb = new StringBuilder(title.length());
@@ -31,7 +50,7 @@ public class ConvertToTitleCase {
 
         // build the new string
         for(int i = 0; i < movie_title.length; i++){
-            if(i == 0 || i == movie_title.length-1 || movie_title.length >= 4){
+            if(i == 0 || i == movie_title.length-1 || movie_title[i].length() >= 4){
                 ConvertToTitleCase.uppercaseFirstLetter(sb, movie_title[i]);
             }else{
                 if(lower_case_words.contains(movie_title[i].toLowerCase())){
@@ -52,6 +71,7 @@ public class ConvertToTitleCase {
         //takes the first letter and converts to upper case
         //appending the result to the string builder
         sb.append(Character.toUpperCase(word.charAt(0)));
+
         //takes the remaining part of the string converting it to lower
         //case, appending the result to the string builder
         sb.append(word.substring(1).toLowerCase());
