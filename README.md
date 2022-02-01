@@ -81,10 +81,10 @@ The two bonus/optional items for assignment I accomplished with the Query annota
 ***Title Case***
 Title Case conversion is actually quite sophisticated and has various rules depending on the style being used(ie MLA, APA, Chicago etc). 
 For time consideration and simplicity, will make an assumption on Title Case Rules(order of priority… those first on the list are higher priority): 
-Capitalize First and Last words
-Capitalize words four letters or longer
-Lower case “a”, “an”, “the”, “and”, “but”, “for”, “at”, “by”, to”
-Does not handle commas in front of words
+ - Capitalize First and Last words
+ - Capitalize words four letters or longer
+ - Lower case “a”, “an”, “the”, “and”, “but”, “for”, “at”, “by”, to”
+ - Does not handle commas in front of words
 
 ## Given More Time
 Given more time, I would...
@@ -93,7 +93,7 @@ Given more time, I would...
  - out: Fresh out the Oven, but School’s Out Forever (adjective)
  - up: Crawling up a Hill, but Picking Up the Pieces (adverb)
  - Reference: https://titlecaseconverter.com/
-1. I would also like to spend more time writing unit tests and mocking up the database. Testing is very important to me. Also taking time to think more about private methods and possibly coming up with indirect tests for them.
-1. Add more commenting to the files especially the Convert to Title Case. 
-1. Refractor the ConvertToTitleCase.java - the complex logic should be broken up to help with readability. 
-1. Put more into the server validation of incomming requests.
+2. I would also like to spend more time writing unit tests and mocking up the database. Testing is very important to me. Also taking time to think more about private methods and possibly coming up with indirect tests for them.
+3. Add more commenting to the files especially the Convert to Title Case. 
+4. Refractor the ConvertToTitleCase.java - the complex logic should be broken up to help with readability. 
+5. Put more into the server validation of incomming requests.
