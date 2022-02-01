@@ -30,14 +30,14 @@ public class MovieMetadataController {
 
     @GetMapping(value = "/moviemetadata", params = "year")
     @ResponseBody
-    public List<MovieMetadata> getMoviesByYear(@RequestParam @NotBlank(message="Need to add a year") @Min(value = 0, message="Must be greater than 0") int year){
+    public List<MovieMetadata> getMoviesByYear(@RequestParam @Min(value = 0, message="Must be greater than 0") int year){
         List<MovieMetadata> movieMetadata = movieMetadataService.getByYear(year);
         return movieMetadata;
     }
 
     @GetMapping(value = "/moviemetadata", params = "decade")
     @ResponseBody
-    public List<MovieMetadata> getMoviesByDecade(@RequestParam @NotBlank(message="Need to add a year") @Min(value = 0, message="Must be greater than 0") int decade){
+    public List<MovieMetadata> getMoviesByDecade(@RequestParam @Min(value = 0, message="Must be greater than 0") int decade){
         List<MovieMetadata> movieMetadata = movieMetadataService.getByDecade(decade);
         return movieMetadata;
     }
