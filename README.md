@@ -89,7 +89,7 @@ For time consideration and simplicity, will make an assumption on Title Case Rul
 ## Given More Time
 Given more time, I would...
 
-1. Given more time to complete this assignment,  I would take a deep dive into grammar processing as certain words would be capitalized and other times they should be lower cased. For example, in certain times the words “in”, “on”, “by” should be lowercase(preposition) and other times they should be upper cased(adjective or adverb). 
+1. Given more time to complete this assignment,  I would take a deep dive into grammar processing as certain words would be capitalized and other times they should be lower cased. For example, in certain times the words “in”, “on”, “by” should be lowercase(preposition) and other times they should be upper cased(adjective or adverb).   
 ex:
  - out: Fresh out the Oven, but School’s Out Forever (adjective)
  - up: Crawling up a Hill, but Picking Up the Pieces (adverb)
