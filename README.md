@@ -19,8 +19,8 @@
 
 ## Requirements:
 
-- Oracle JDK11
-- Gradle >= 7.7.3
+- Oracle JDK11 -> https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html
+- Gradle >= 7.7.3 -> https://gradle.org/releases/
 
 ## Steps
 
