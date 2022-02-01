@@ -13,9 +13,13 @@ public interface MovieMetadataRepository extends MongoRepository<MovieMetadata, 
 
     List<MovieMetadata> findMovieMetadataByYear(int year);
 
+    // Queries the collection to match on the cast with 
+    //the subarray that contains the specified cast member
     @Query(value = "{'cast': {$all:['?0']}}")
     List<MovieMetadata> findMovieMetadataByCast(String cast);
-    
+
+    // Queries the collection to match on a years
+    // between specified values
     @Query(value = "{year: {$gte: ?0, $lt: ?1}}")
     List<MovieMetadata> findMovieMetadataByDecade(int start, int end);
 }

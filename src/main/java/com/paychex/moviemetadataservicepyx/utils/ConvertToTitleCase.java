@@ -12,12 +12,17 @@ import com.paychex.moviemetadataservicepyx.data.MovieMetadata;
 *(order of priority… those first on the list are higher priority): 
 *Capitalize First and Last words
 *Capitalize words four letters or longer
+*Will seperate on spaces
 *Lower case “a”, “an”, “the”, “and”, “but”, “for”, “at”, “by”, to”, "is", "it", "of"
 */
 public class ConvertToTitleCase {
 
     /*******Stream Processing********/
     public static List<MovieMetadata> processMovies(List<MovieMetadata> movies){
+        if(movies == null || movies.size() == 0){
+            return null;
+        }
+
         return movies
         .stream() 
         .map((movie) -> ConvertToTitleCase.processMovie(movie))
@@ -30,10 +35,10 @@ public class ConvertToTitleCase {
         return movie;
     }
     
-    private static String toTitleCase(String title){
+    public static String toTitleCase(String title){
 
         // Check the length of the string
-        if(title.length() == 0 || title == null){
+        if(title == null || title.length() == 0){
             return null;
         }
 

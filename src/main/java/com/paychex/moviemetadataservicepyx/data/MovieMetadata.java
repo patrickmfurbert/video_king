@@ -14,6 +14,13 @@ public class MovieMetadata {
     public MovieMetadata() {
     }
 
+    public MovieMetadata(String title, int year, List<String> cast, List<String> genres) {
+        this.title = title;
+        this.year = year;
+        this.cast = cast;
+        this.genres = genres;
+    }
+
     public String getTitle() {
         return this.title;
     }
