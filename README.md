@@ -12,7 +12,7 @@
 
 [Given More Time..](#given-more-time)
 
-[HTTP DIAGRAM](#http Diagram)
+[Http Diagram](#http-Diagram)
 
 
 # Quickstart
