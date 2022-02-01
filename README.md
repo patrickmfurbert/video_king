@@ -12,6 +12,9 @@
 
 [Given More Time..](#given-more-time)
 
+[HTTP DIAGRAM](#http Diagram)
+
+
 # Quickstart
 
 ## Requirements:
@@ -98,3 +101,6 @@ Given more time, I would...
 3. Add more commenting to the files especially the Convert to Title Case. 
 4. Refractor the ConvertToTitleCase.java - the complex logic should be broken up to help with readability. 
 5. Put more into the server validation of incomming requests.
+
+## HTTP Diagram
+![](../src/main/resources/http_diag.png)
