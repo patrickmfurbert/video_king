@@ -35,7 +35,7 @@ spring:
     - ***get params*** are title, year, cast_member, decade
     - ex: retrieve metadata with cast member 'Florance Lawrence' perform following get request `http://localhost:8080/movies?cast_member=Florence Lawrence`
     - You can make a ***post*** request on the same endpoint http://localhost:8080/movies
-    - ex: post with the following schema 
+    - ex: post with the following schema   
 
     ```json
     {
