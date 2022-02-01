@@ -35,7 +35,7 @@ spring:
 ```
 1. run `gradle bootRun` or `./gradlew bootRun` to get all of the necessary packages and run the server
     - backend server: http://localhost:8080/movies 
-    - ***get params*** are title, year, cast_member, decade
+    - ***get params*** are title, year, cast_member, decade. **You can only use one param in a get request.**
     - ex: retrieve metadata with cast member 'Florance Lawrence' perform following get request `http://localhost:8080/movies?cast_member=Florence Lawrence`
     - You can make a ***post*** request on the same endpoint http://localhost:8080/movies
     - ex: post with the following schema   
